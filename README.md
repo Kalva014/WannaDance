@@ -34,6 +34,12 @@ https://drive.google.com/file/d/1MZ_m2w_3HE83bu4nLB7K-AD5JYx3Pc-o/view?usp=shari
 6. To put together the raspberry pi, connect the capcitive sensor and the lcd screen using qwiic connectors
 7. Clone the repo to the raspberry pi and run 'python wanna_dance'
 
+# Timeline:
+* Week 12: Gathered the necessary materials and programmed the skeleton code
+* Week 13: Polished the code and start putting together physical product
+* Week 14: Debug any leftover issues in the code and complete physical product 
+* Week 15: Final product ready for demo and has been tested with users
+
 # Verplank Diagram of the System:
 
 
