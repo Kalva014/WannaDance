@@ -7,7 +7,10 @@
 # Big idea: 	
 Imagine you are at a social event and you bump into someone, how do you prevent any conflict? To settle any issues between the two of you, we can start a dancing game! The game would resemble the famous Dance Dance Revolution Game where users have a dance pad on the ground and start breaking it down! To do this both users will step on the pads at the same time, music will begin to play, and a projector as well as LED lights will tell the two users what pad to dance on. Once they finish they both will be declared a winner.
 
-# Video demo of volunteers interacting with Wanna Dance:
+# Demo Video:
+https://drive.google.com/file/d/1a5BjfniB0WJinnXDSP1-J19pE2uYzRqN/view
+
+# User Test:
 https://drive.google.com/file/d/1MZ_m2w_3HE83bu4nLB7K-AD5JYx3Pc-o/view?usp=sharing 
 
 # Parts Needed:
@@ -23,7 +26,7 @@ https://drive.google.com/file/d/1MZ_m2w_3HE83bu4nLB7K-AD5JYx3Pc-o/view?usp=shari
 * Tin Foil Roll * 1
 
 # Setup:
-
+1. 
 
 # Verplank Diagram of the System:
 
