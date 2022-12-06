@@ -21,6 +21,25 @@ image = Image.new("1", (oled.width, oled.height)) # Create blank image for drawi
 draw = ImageDraw.Draw(image)
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
 
+# Spotify Setup
+import json
+import spotipy
+import webbrowser
+from spotipy.oauth2 import SpotifyOAuth
+username = '12169592626'
+clientID = '68991d183c0f42c383c005bef367014f'
+clientSecret = '6961ade3b8e44d67af0f743d95f1c59f'
+redirect_uri = 'http://google.com/callback/'
+oauth_object = spotipy.SpotifyOAuth(clientID, clientSecret, redirect_uri)
+token_dict = oauth_object.get_access_token()
+token = token_dict['access_token']
+spotifyObject = spotipy.Spotify(auth=token)
+user_name = spotifyObject.current_user()
+device_id = '1ccefd1dec8aef8e9b81cf247b4a68fb236b1717'
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=clientID,
+client_secret=clientSecret, redirect_uri=redirect_uri, scope="user-read-playback-state,user-modify-playback-state"))
+
+
 # # LED LIGHT STRIP
 # import qwiic_led_stick
 # my_stick = qwiic_led_stick.QwiicLEDStick()
@@ -29,13 +48,13 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
 # blue_list = [214, 147, 25, 124, 153, 163, 188, 33, 175, 221]
 
 # The specific capacitive sensors(aka the tiles) that will light up and need to be stepped on
-column = [0,1,2,3,4,5]
-plug_ips = ["192.168.0.181", "192.168.0.141", "192.168.0.138"]
+column = [0,1,2,3,4,5,6,7,8,9,10,11]
+plug_ips = ["192.168.0.138", "192.168.0.141", "192.168.0.181"]
 
 # Players' points
 player1 = 200
+player2 = 200
 rounds_lasted = 0
-player2 = 0
 
 sleep_time = 5
 
@@ -53,9 +72,12 @@ def displayToLCD(strToDisplay,font_size=12):
 # Checks if user stepped on a tile and gives them points if they did
 def checkColumn(dance_columns):
     global player1
+    global player2
     global sleep_time
     
     time.sleep(sleep_time) # Give users time to step on a tile 
+
+    # Player 1 Check Columns
     if mpr121[dance_columns[0]].value == True and mpr121[dance_columns[1]].value == True:
         #print("Hitting both columns")
         player1 += 0
@@ -67,6 +89,19 @@ def checkColumn(dance_columns):
         player1 -= 10
     else:
         player1 -= 20
+    
+    # Player 2 Check Columns
+    if mpr121[dance_columns[2]].value == True and mpr121[dance_columns[3]].value == True:
+        #print("Hitting both columns")
+        player2 += 0
+    elif mpr121[dance_columns[2]].value == True and mpr121[dance_columns[3]].value == False:
+        #print("Only hitting one columns")
+        player2 -= 10
+    elif mpr121[dance_columns[2]].value == False and mpr121[dance_columns[3]].value == True:
+        #print("Only hitting one columns")
+        player2 -= 10
+    else:
+        player2 -= 20
 
     
     if(sleep_time > 1):
@@ -80,17 +115,19 @@ def randomColumn():
 # Main game loop ran here
 def game():
     global player1
+    global player2
     global rounds_lasted
     incr = 0
     prev_plug = None
     rounds_lasted = 0
     player1 = 200
+    player2 = 200
     while True:
-        displayToLCD(f"Players score: {player1}" )
+        displayToLCD(f"Player 1 score: {player1} \n Player 2 score: {player2}" )
         # my_stick.set_all_LED_color(214, 0, 0)
 
         rand_column = randomColumn()
-        dance_columns = [(rand_column*2)-2,(rand_column*2)-1]
+        dance_columns = [(rand_column*2)-2,(rand_column*2)-1, 11 - ((rand_column*2)-2), 11 - ((rand_column*2)-1)] # [First player tile, First player tile, second player tile, second player tile]
         #print(f"Rand column: {rand_column}")
 
         if rand_column == 1:
@@ -131,8 +168,12 @@ def game():
         rounds_lasted += 1
         #print(f"Increment: {incr}")
 
-        if player1 <= 0: 
-            return "Game over! \n Rounds lasted: " + str(rounds_lasted)
+        if player1 <= 0 and player2 <= 0:
+            return "Game over players! \n Rounds lasted: " + str(rounds_lasted)
+        if player1 <= 0 and player2 > 0: 
+            return "Game over player 1! \n Rounds lasted: " + str(rounds_lasted)
+        if player1 > 0 and player2 <= 0: 
+            return "Game over player 2! \n Rounds lasted: " + str(rounds_lasted)
 
 # Wait for two users to step on a tile 3 times 
 def checkIfGameStarted():
@@ -143,7 +184,7 @@ def checkIfGameStarted():
         displayToLCD("Wanna Dance?")
         incr += 1
         #print(f"Increment: {incr}")
-        for i in range(6): 
+        for i in range(12): 
             if mpr121[i].value == True:
                 steps_on_tile += 1
                 print("Number of times stepped on the same tile: " + str(steps_on_tile))
@@ -161,10 +202,17 @@ def main():
     # Wait for users to step on squares
     while True:
         checkIfGameStarted()
+        
+        # Start music from wanna dance playlist
+        print(json.dumps(user_name, sort_keys=True, indent=4))
+        sp.shuffle(True, device_id)
+        sp.start_playback(device_id, context_uri="spotify:playlist:2t7Z3HHMczgUN3Bc2dch5L")
         ## HERE WE NEED TO turn on plug 3 which should correspond to the main lights
         # Start the game
         winner = game()
+        
         # Show game results on LCD
+        sp.pause_playback(device_id) # Stop music from playing
         displayToLCD(winner,10)
         time.sleep(10)
         displayToLCD("Resetting")
