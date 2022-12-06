@@ -16,7 +16,10 @@ Imagine you are at a social event and you bump into someone, how do you prevent 
 * Smart plug x 3
 * Alligator Clips x 12
 
-# Motivation
+# Setup:
+
+# State Diagram:
+
 
 # Progression Pictures:
 ![IMG_0418](https://user-images.githubusercontent.com/46539140/206000893-ccedec00-bb08-4807-8f3c-0ace1a660b2e.jpg)
