@@ -26,7 +26,13 @@ https://drive.google.com/file/d/1MZ_m2w_3HE83bu4nLB7K-AD5JYx3Pc-o/view?usp=shari
 * Tin Foil Roll * 1
 
 # Setup:
-1. 
+1. Grab the canvas and separate using duck tape the canvas into 3 columns
+2. With two copper tape strips, apply in between each column
+3. Find the middle of the canvas and place two rows of duck tape to indicate the separation of the dance pad(Don't forget to cut the copper tape in the middle of the canvas)
+4. Grab the 12 alligator clips and clip them to the ends of the canvas where the copper tape stops
+5. At the other end of the alligator clips, connect them to the to the capacitive sensor
+6. To put together the raspberry pi, connect the capcitive sensor and the lcd screen using qwiic connectors
+7. Clone the repo to the raspberry pi and run 'python wanna_dance'
 
 # Verplank Diagram of the System:
 
