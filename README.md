@@ -15,3 +15,11 @@ Imagine you are at a social event and you bump into someone, how do you prevent 
 * Speaker x 1
 * Smart plug x 3
 * Alligator Clips x 12
+
+# Motivation
+
+# Progression Pictures:
+![IMG_0418](https://user-images.githubusercontent.com/46539140/206000893-ccedec00-bb08-4807-8f3c-0ace1a660b2e.jpg)
+![69143610260__8E92C3EF-3FF3-4E60-ACC6-7F870D9DF4C8](https://user-images.githubusercontent.com/46539140/206001020-606a1ae0-8f02-4acf-b2af-2153534f40b0.jpg)
+![IMG_0419](https://user-images.githubusercontent.com/46539140/206001396-1ad45e6b-1a5e-41e9-a3af-f6bb5cf6e26a.jpg)
+![69145903669__958712EB-D8CC-4B20-9E49-166AE9653600](https://user-images.githubusercontent.com/46539140/206001792-b7b2dff6-e7f6-45f1-a7c5-bce1708e59d4.jpg)
