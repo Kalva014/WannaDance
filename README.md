@@ -51,6 +51,9 @@ https://drive.google.com/file/d/1MZ_m2w_3HE83bu4nLB7K-AD5JYx3Pc-o/view?usp=shari
 ![IMG_0428](https://user-images.githubusercontent.com/46539140/206002770-fd42fc13-1088-4450-ad84-549fdf8678ff.jpg)
 ![IMG_0478](https://user-images.githubusercontent.com/46539140/206003144-346c6f2f-1039-4052-894f-9ffe52dda4c4.jpg)
 
+# Challenges:
+Some of the major obstacles that we came across when constructing our final project was specifically with the smart plugs. There were several network issues due to the security layer so we had to switch to a private network. Specifically "Device_Farm" which is maintained by a lab at Cornell Tech. In addition, we also faced some trouble when constructing the physical device. There were some design challenges when considering conductive sensing using the capcitive sensor. To solve this, sensing was significantly better using tin foil that was applied to the bottom of the user's shoes. 
+
 # Potential Improvements;
 1. Since we have a small LCD screen showing the user's scores, we could add code to have it vocally output through a speaker 
 2. Find a conductive material that is more durable than copper tape since the tape easily rips with greater force
