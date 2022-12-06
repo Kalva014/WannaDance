@@ -23,3 +23,5 @@ Imagine you are at a social event and you bump into someone, how do you prevent 
 ![69143610260__8E92C3EF-3FF3-4E60-ACC6-7F870D9DF4C8](https://user-images.githubusercontent.com/46539140/206001020-606a1ae0-8f02-4acf-b2af-2153534f40b0.jpg)
 ![IMG_0419](https://user-images.githubusercontent.com/46539140/206001396-1ad45e6b-1a5e-41e9-a3af-f6bb5cf6e26a.jpg)
 ![69145903669__958712EB-D8CC-4B20-9E49-166AE9653600](https://user-images.githubusercontent.com/46539140/206001792-b7b2dff6-e7f6-45f1-a7c5-bce1708e59d4.jpg)
+![69144620194__46881899-DD6E-4C79-B8E1-6B5475B1D535](https://user-images.githubusercontent.com/46539140/206002124-a88a759c-bc8e-4725-9fb6-88074aacb0d5.jpg)
+![69197682019__35E0287C-9D6F-4BBA-A420-52519FCEC644](https://user-images.githubusercontent.com/46539140/206002454-f444b749-3df4-4b1b-bb64-750353c3edcb.jpg)
